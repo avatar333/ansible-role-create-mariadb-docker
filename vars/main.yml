@@ -1,2 +1,10 @@
 ---
 # vars file for ansible-role-create-mariadb-docker
+
+pymysql2: python2-PyMySQL
+
+pymysql3: python36-PyMySQL
+
+mysql_password: XpgQszxGnd53LS3Z
+
+mariadb_docker_name: mymariadb

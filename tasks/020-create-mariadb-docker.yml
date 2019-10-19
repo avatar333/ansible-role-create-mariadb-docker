@@ -1,0 +1,21 @@
+---
+
+# Source homepage: https://hub.docker.com/_/mariadb
+
+- name: Create MariaDB docker
+  docker_container:
+    name: mymariadb
+    image: mariadb:latest
+    state: started
+    volumes:
+      - "{{ MYSQL_DATA }}:/var/lib/mysql"
+      - "{{ MYSQL_BACKUP }}:/backup"
+    userns_mode: host
+    network_mode: host
+    ports: "3306:3306"
+    env:
+      MYSQL_ROOT_PASSWORD: "{{ mysql_password }}"
+
+#- name: Set MySQL password
+#  command: docker exec mymariadb /usr/bin/mysqladmin -u root password '"{{ mysql_password }}"'  
+#  tags: set_password

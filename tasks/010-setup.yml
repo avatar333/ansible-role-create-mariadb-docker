@@ -1,0 +1,13 @@
+---
+
+- name: Install PyMySQL for python v2.x
+  yum:
+    name: "{{ pymysql2 }}"
+    state: latest
+  when: '"2.7" in ansible_python_version'
+
+- name: Install PyMySQL for python v3.x
+  yum:
+    name: "{{ pymysql3 }}"
+    state: latest
+  when: '"3.6" in ansible_python_version'

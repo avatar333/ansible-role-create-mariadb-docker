@@ -1,2 +1,8 @@
 ---
 # tasks file for ansible-role-create-mariadb-docker
+
+- include: 010-setup.yml
+  tags: setup
+
+- include: 020-create-mariadb-docker.yml
+  tags: create_mariadb_docker

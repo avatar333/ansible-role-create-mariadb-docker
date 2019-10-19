@@ -1,2 +1,6 @@
 ---
 # defaults file for ansible-role-create-mariadb-docker
+
+MYSQL_DATA: /mnt/miscdata/opt/data/mysql
+
+MYSQL_BACKUP: /mnt/miscdata/opt/backups/mysql
